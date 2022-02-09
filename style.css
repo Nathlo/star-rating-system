@@ -17,6 +17,7 @@ body {
 }
 
 .container {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +28,28 @@ body {
   border: 1px solid #444;
   border-radius: 5px;
 }
+
+.container .post {
+  display: none;
+}
+
+.container .text {
+  font-size: 25px;
+  font-weight: 500;
+  color: #666;
+}
+
+.container .edit {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #666;
+  cursor: pointer;
+}
+
 /* inputs are radio buttons and are hidden */
 .container .star-widget input {
   display: none;
@@ -52,6 +75,30 @@ input:checked ~ label {
 input#rate-5:checked ~ label {
   color: #fe7;
   text-shadow: 0 0 20px #952;
+}
+
+input#rate-1:checked ~ form header:before {
+  content: "I just hate it 😠";
+}
+input#rate-2:checked ~ form header:before {
+  content: "I don't like it 😤";
+}
+input#rate-3:checked ~ form header:before {
+  content: "It is awesome 😃";
+}
+input#rate-4:checked ~ form header:before {
+  content: "I just like it 😊";
+}
+input#rate-5:checked ~ form header:before {
+  content: "I just love it! 😍";
+}
+
+.container form {
+  display: none;
+}
+
+input:checked ~ form {
+  display: block;
 }
 
 form header {
